@@ -1,0 +1,666 @@
+/* ═══════════════════════════════════════════════════════════
+   GOKUL NAMKEEN — ROYAL HERITAGE DESIGN SYSTEM
+   Full Dark & Light Mode Support (FORCE OVERRIDES)
+   ═══════════════════════════════════════════════════════════ */
+
+@import "tailwindcss";
+
+/* ─── LIGHT MODE (Default) ─── */
+:root,
+[data-theme="light"] {
+  --rh-saffron: #E85D04;
+  --rh-saffron-deep: #C44A00;
+  --rh-saffron-light: #FF8A3D;
+  --rh-saffron-soft: #FFF4EC;
+  --rh-saffron-glow: rgba(232, 93, 4, 0.28);
+
+  --rh-maroon: #6B1D3A;
+  --rh-maroon-deep: #4A1228;
+  --rh-maroon-light: #A8305A;
+  --rh-maroon-soft: #F9EFF4;
+
+  --rh-gold: #C9A227;
+  --rh-gold-light: #E8C547;
+  --rh-gold-deep: #9C7B1A;
+  --rh-gold-soft: #FDF9EC;
+  --rh-gold-glow: rgba(201, 162, 39, 0.3);
+
+  --rh-emerald: #0B6E4F;
+  --rh-emerald-deep: #064D37;
+  --rh-emerald-light: #14A878;
+  --rh-emerald-soft: #E8F5F0;
+
+  --rh-ivory: #FDF8F0;
+  --rh-cream: #FFFCF7;
+  --rh-linen: #F5EDE0;
+  --rh-sand: #E8DDC8;
+
+  --rh-charcoal: #1A1614;
+  --rh-espresso: #2D2521;
+  --rh-stone: #6B5E52;
+  --rh-taupe: #9C8F82;
+
+  --rh-success: #0B6E4F;
+  --rh-warning: #D97706;
+  --rh-danger: #B91C1C;
+  --rh-info: #1E40AF;
+
+  --rh-bg: var(--rh-ivory);
+  --rh-surface: var(--rh-cream);
+  --rh-elevated: #FFFFFF;
+  --rh-overlay: rgba(26, 22, 20, 0.6);
+
+  --rh-text: var(--rh-charcoal);
+  --rh-text-soft: var(--rh-espresso);
+  --rh-text-muted: var(--rh-stone);
+  --rh-text-faint: var(--rh-taupe);
+  --rh-text-inverse: #FFFFFF;
+
+  --rh-border: #E8DDC8;
+  --rh-border-strong: #D4C4A8;
+  --rh-border-gold: rgba(201, 162, 39, 0.4);
+
+  --rh-shadow-xs: 0 1px 2px rgba(26, 22, 20, 0.04);
+  --rh-shadow-sm: 0 2px 8px -2px rgba(26, 22, 20, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --rh-shadow-md: 0 8px 24px -6px rgba(26, 22, 20, 0.12), 0 3px 8px -2px rgba(0, 0, 0, 0.06);
+  --rh-shadow-lg: 0 20px 40px -10px rgba(26, 22, 20, 0.18), 0 6px 16px -4px rgba(0, 0, 0, 0.08);
+  --rh-shadow-xl: 0 32px 64px -16px rgba(26, 22, 20, 0.24), 0 12px 24px -8px rgba(0, 0, 0, 0.1);
+  --rh-shadow-glow: 0 0 40px -8px var(--rh-saffron-glow);
+  --rh-shadow-gold: 0 0 30px -6px var(--rh-gold-glow);
+
+  --rh-radius-xs: 6px;
+  --rh-radius-sm: 10px;
+  --rh-radius-md: 14px;
+  --rh-radius-lg: 20px;
+  --rh-radius-xl: 28px;
+  --rh-radius-2xl: 36px;
+  --rh-radius-full: 9999px;
+
+  --rh-font-display: 'Playfair Display', 'Outfit', Georgia, serif;
+  --rh-font-heading: 'Outfit', -apple-system, sans-serif;
+  --rh-font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --rh-font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+  --rh-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --rh-transition-fast: 150ms var(--rh-ease);
+  --rh-transition: 280ms var(--rh-ease);
+  --rh-transition-slow: 450ms var(--rh-ease);
+}
+
+/* ─── DARK MODE — Midnight Spice ─── */
+[data-theme="dark"],
+.dark-mode {
+  --rh-saffron: #F97B3D;
+  --rh-saffron-deep: #E85D04;
+  --rh-saffron-light: #FFA566;
+  --rh-saffron-soft: #2A1A10;
+  --rh-saffron-glow: rgba(249, 123, 61, 0.4);
+
+  --rh-maroon: #C4306B;
+  --rh-maroon-deep: #A8305A;
+  --rh-maroon-light: #E85D8A;
+  --rh-maroon-soft: #2A1420;
+
+  --rh-gold: #E8C547;
+  --rh-gold-light: #F5D76E;
+  --rh-gold-deep: #C9A227;
+  --rh-gold-soft: #2A2210;
+  --rh-gold-glow: rgba(232, 197, 71, 0.4);
+
+  --rh-emerald: #14A878;
+  --rh-emerald-deep: #0B6E4F;
+  --rh-emerald-light: #2ECFA0;
+  --rh-emerald-soft: #0F2A22;
+
+  --rh-ivory: #0F0D0B;
+  --rh-cream: #1A1614;
+  --rh-linen: #252019;
+  --rh-sand: #2D2521;
+
+  --rh-charcoal: #FDF8F0;
+  --rh-espresso: #E8DDC8;
+  --rh-stone: #9C8F82;
+  --rh-taupe: #6B5E52;
+
+  --rh-success: #14A878;
+  --rh-warning: #F97B3D;
+  --rh-danger: #F87171;
+  --rh-info: #60A5FA;
+
+  --rh-bg: #0F0D0B;
+  --rh-surface: #1A1614;
+  --rh-elevated: #252019;
+  --rh-overlay: rgba(0, 0, 0, 0.75);
+
+  --rh-text: #FDF8F0;
+  --rh-text-soft: #E8DDC8;
+  --rh-text-muted: #9C8F82;
+  --rh-text-faint: #6B5E52;
+  --rh-text-inverse: #1A1614;
+
+  --rh-border: #2D2521;
+  --rh-border-strong: #3D332D;
+  --rh-border-gold: rgba(232, 197, 71, 0.35);
+
+  --rh-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --rh-shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4);
+  --rh-shadow-md: 0 8px 24px -6px rgba(0, 0, 0, 0.6), 0 3px 8px -2px rgba(0, 0, 0, 0.4);
+  --rh-shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 6px 16px -4px rgba(0, 0, 0, 0.5);
+  --rh-shadow-xl: 0 32px 64px -16px rgba(0, 0, 0, 0.8), 0 12px 24px -8px rgba(0, 0, 0, 0.5);
+}
+
+/* ═══════════════════════════════════════════════════════
+   GLOBAL BASE STYLES
+   ═══════════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+  background-color: var(--rh-bg);
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--rh-bg) !important;
+  color: var(--rh-text) !important;
+  font-family: var(--rh-font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.35s ease;
+}
+
+[data-theme="light"] body::before,
+:root:not([data-theme="dark"]) body::before {
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(232, 93, 4, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 85% 70%, rgba(201, 162, 39, 0.05) 0%, transparent 40%);
+}
+
+[data-theme="dark"] body::before,
+.dark-mode body::before {
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(249, 123, 61, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 85% 70%, rgba(232, 197, 71, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(196, 48, 107, 0.05) 0%, transparent 60%);
+}
+
+/* ═══════════════════════════════════════════════════════
+   GLOBAL DARK MODE — FORCED OVERRIDES FOR ALL PAGES
+   Every white background, dark text, and light border gets
+   converted automatically without touching individual CSS
+   ═══════════════════════════════════════════════════════ */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* ─── Page containers ─── */
+[data-theme="dark"] .home-container,
+[data-theme="dark"] .about-page,
+[data-theme="dark"] .contact-page,
+[data-theme="dark"] .cart-page,
+[data-theme="dark"] .pay-page,
+[data-theme="dark"] .product-page,
+[data-theme="dark"] .pd-page,
+[data-theme="dark"] .to-page,
+[data-theme="dark"] .ap-page,
+[data-theme="dark"] .record-page,
+[data-theme="dark"] .ao-page,
+[data-theme="dark"] .acp-page,
+[data-theme="dark"] .dash-page,
+[data-theme="dark"] .recipe-hub-page,
+[data-theme="dark"] .festive-offers-page,
+[data-theme="dark"] .loyalty-page,
+[data-theme="dark"] .heritage-page,
+[data-theme="dark"] .nf-page {
+  background-color: var(--rh-bg) !important;
+  color: var(--rh-text) !important;
+}
+
+/* ─── ALL CARDS & SURFACES ─── */
+[data-theme="dark"] .about-info,
+[data-theme="dark"] .contact-info,
+[data-theme="dark"] .contact-form-wrap,
+[data-theme="dark"] .cart-row,
+[data-theme="dark"] .cart-summary,
+[data-theme="dark"] .cart-empty-state,
+[data-theme="dark"] .pay-form,
+[data-theme="dark"] .pay-summary,
+[data-theme="dark"] .pay-success,
+[data-theme="dark"] .pay-empty,
+[data-theme="dark"] .product-card,
+[data-theme="dark"] .product-loading,
+[data-theme="dark"] .product-empty,
+[data-theme="dark"] .pd-info,
+[data-theme="dark"] .pd-tabs-section,
+[data-theme="dark"] .pd-main-image,
+[data-theme="dark"] .pd-loading,
+[data-theme="dark"] .pd-empty,
+[data-theme="dark"] .pd-variant-box,
+[data-theme="dark"] .pd-shipping-card,
+[data-theme="dark"] .pd-nutri-item,
+[data-theme="dark"] .pd-delivery-check,
+[data-theme="dark"] .to-card,
+[data-theme="dark"] .to-loading,
+[data-theme="dark"] .to-empty,
+[data-theme="dark"] .to-summary,
+[data-theme="dark"] .ap-form,
+[data-theme="dark"] .ap-header-icon,
+[data-theme="dark"] .record-table-wrap,
+[data-theme="dark"] .record-loading,
+[data-theme="dark"] .record-empty,
+[data-theme="dark"] .ao-table-wrap,
+[data-theme="dark"] .ao-loading,
+[data-theme="dark"] .ao-empty,
+[data-theme="dark"] .acp-card,
+[data-theme="dark"] .acp-stat,
+[data-theme="dark"] .acp-empty,
+[data-theme="dark"] .acp-spinner-wrap,
+[data-theme="dark"] .dash-card,
+[data-theme="dark"] .dash-stat-card,
+[data-theme="dark"] .dash-loading,
+[data-theme="dark"] .dash-alert,
+[data-theme="dark"] .recipe-card,
+[data-theme="dark"] .offer-card,
+[data-theme="dark"] .tier-card,
+[data-theme="dark"] .feature-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .contact-card,
+[data-theme="dark"] .stat-item,
+[data-theme="dark"] .timeline-card,
+[data-theme="dark"] .market-card,
+[data-theme="dark"] .story-image,
+[data-theme="dark"] .investor-list li,
+[data-theme="dark"] .mfg-card,
+[data-theme="dark"] .partner-card,
+[data-theme="dark"] .welcome-card,
+[data-theme="dark"] .summary-card,
+[data-theme="dark"] .how-card,
+[data-theme="dark"] .action-btn,
+[data-theme="dark"] .cta-inner,
+[data-theme="dark"] .hero-search-box,
+[data-theme="dark"] .hero-floating-card,
+[data-theme="dark"] .hero-image-frame,
+[data-theme="dark"] .trust-strip,
+[data-theme="dark"] .trust-pill-item,
+[data-theme="dark"] .trust-emoji,
+[data-theme="dark"] .tag-chip,
+[data-theme="dark"] .filter-chip,
+[data-theme="dark"] .product-search input,
+[data-theme="dark"] .product-sort-wrap,
+[data-theme="dark"] .pd-pincode-input,
+[data-theme="dark"] .pd-back,
+[data-theme="dark"] .cart-back,
+[data-theme="dark"] .pay-back,
+[data-theme="dark"] .about-back,
+[data-theme="dark"] .contact-back,
+[data-theme="dark"] .ap-back,
+[data-theme="dark"] .ao-refresh,
+[data-theme="dark"] .acp-refresh,
+[data-theme="dark"] .to-refresh,
+[data-theme="dark"] .dash-refresh-btn,
+[data-theme="dark"] .mode-tab,
+[data-theme="dark"] .image-mode-tabs,
+[data-theme="dark"] .file-upload-wrapper,
+[data-theme="dark"] .auth-card {
+  background: var(--rh-surface) !important;
+  background-image: none !important;
+  border-color: var(--rh-border) !important;
+  color: var(--rh-text) !important;
+}
+
+/* ─── TYPOGRAPHY ─── */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] .section-head h2,
+[data-theme="dark"] .hero h1,
+[data-theme="dark"] .pd-title,
+[data-theme="dark"] .product-title,
+[data-theme="dark"] .cart-header h1,
+[data-theme="dark"] .pay-header h1,
+[data-theme="dark"] .about-header h1,
+[data-theme="dark"] .recipe-title,
+[data-theme="dark"] .offer-title,
+[data-theme="dark"] .tier-name,
+[data-theme="dark"] .feature-card h3,
+[data-theme="dark"] .product-name,
+[data-theme="dark"] .brand-name {
+  color: var(--rh-text) !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] .section-sub,
+[data-theme="dark"] .hero-subtitle,
+[data-theme="dark"] .product-desc,
+[data-theme="dark"] .cart-row-meta,
+[data-theme="dark"] .pd-desc,
+[data-theme="dark"] .muted,
+[data-theme="dark"] .user-role,
+[data-theme="dark"] .product-meta,
+[data-theme="dark"] .recipe-meta,
+[data-theme="dark"] .offer-desc {
+  color: var(--rh-text-muted) !important;
+}
+
+[data-theme="dark"] strong {
+  color: var(--rh-text) !important;
+}
+
+/* ─── INPUTS / SELECTS / TEXTAREAS ─── */
+[data-theme="dark"] input:not([type="checkbox"]):not([type="radio"]),
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background: var(--rh-linen) !important;
+  color: var(--rh-text) !important;
+  border-color: var(--rh-border-strong) !important;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: var(--rh-text-faint) !important;
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] textarea:focus {
+  border-color: var(--rh-saffron) !important;
+  box-shadow: 0 0 0 3px var(--rh-saffron-glow) !important;
+}
+
+[data-theme="dark"] select option {
+  background: var(--rh-elevated);
+  color: var(--rh-text);
+}
+
+/* ─── TABLES ─── */
+[data-theme="dark"] table,
+[data-theme="dark"] .acp-table,
+[data-theme="dark"] .ao-table,
+[data-theme="dark"] .record-table,
+[data-theme="dark"] .dash-table {
+  background: var(--rh-surface) !important;
+  color: var(--rh-text) !important;
+}
+
+[data-theme="dark"] table th,
+[data-theme="dark"] .acp-table th,
+[data-theme="dark"] .ao-table th,
+[data-theme="dark"] .record-table th,
+[data-theme="dark"] .dash-table th {
+  background: var(--rh-linen) !important;
+  color: var(--rh-text-soft) !important;
+  border-color: var(--rh-border) !important;
+}
+
+[data-theme="dark"] table td,
+[data-theme="dark"] .acp-table td,
+[data-theme="dark"] .ao-table td,
+[data-theme="dark"] .record-table td,
+[data-theme="dark"] .dash-table td {
+  border-color: var(--rh-border) !important;
+  color: var(--rh-text) !important;
+  background: transparent !important;
+}
+
+[data-theme="dark"] table tbody tr:hover td,
+[data-theme="dark"] .acp-table tbody tr:hover td,
+[data-theme="dark"] .ao-table tbody tr:hover td,
+[data-theme="dark"] .record-table tbody tr:hover td,
+[data-theme="dark"] .dash-table tr:hover td {
+  background: var(--rh-linen) !important;
+}
+
+[data-theme="dark"] .expand-row td,
+[data-theme="dark"] .editor-row td,
+[data-theme="dark"] .detail-row td {
+  background: var(--rh-linen) !important;
+}
+
+/* ─── FOOTER ─── */
+[data-theme="dark"] .footer {
+  background: #0A0806 !important;
+  border-top-color: var(--rh-border) !important;
+}
+
+[data-theme="dark"] .footer-section h4,
+[data-theme="dark"] .footer-brand h4 {
+  color: var(--rh-text) !important;
+}
+
+[data-theme="dark"] .footer-brand p,
+[data-theme="dark"] .footer-connect-text,
+[data-theme="dark"] .quick-links a {
+  color: var(--rh-text-muted) !important;
+}
+
+[data-theme="dark"] .quick-links a:hover {
+  color: var(--rh-gold) !important;
+}
+
+/* ─── NAVBAR (Light + Dark) ─── */
+[data-theme="dark"] .user-navbar,
+[data-theme="dark"] .user-navbar.scrolled {
+  background: rgba(15, 13, 11, 0.95) !important;
+  border-bottom-color: var(--rh-border) !important;
+}
+
+[data-theme="dark"] .user-mobile-bar {
+  background: rgba(15, 13, 11, 0.96) !important;
+  border-bottom-color: var(--rh-border) !important;
+}
+
+[data-theme="dark"] .nav-link {
+  color: var(--rh-text-muted) !important;
+}
+
+[data-theme="dark"] .nav-link:hover {
+  color: var(--rh-saffron) !important;
+  background: var(--rh-saffron-soft) !important;
+}
+
+[data-theme="dark"] .nav-link.active {
+  color: #FFFFFF !important;
+  background: linear-gradient(135deg, var(--rh-saffron) 0%, var(--rh-saffron-deep) 100%) !important;
+}
+
+[data-theme="dark"] .cart-btn,
+[data-theme="dark"] .login-btn,
+[data-theme="dark"] .user-chip {
+  background: var(--rh-surface) !important;
+  border-color: var(--rh-border-strong) !important;
+  color: var(--rh-text) !important;
+}
+
+[data-theme="dark"] .cart-btn:hover,
+[data-theme="dark"] .login-btn:hover {
+  background: var(--rh-saffron-soft) !important;
+  border-color: var(--rh-saffron) !important;
+  color: var(--rh-saffron) !important;
+}
+
+[data-theme="dark"] .menu-toggle {
+  background: var(--rh-surface) !important;
+  border-color: var(--rh-border-strong) !important;
+  color: var(--rh-text) !important;
+}
+
+[data-theme="dark"] .nav-backdrop {
+  background: rgba(0, 0, 0, 0.75) !important;
+}
+
+/* Admin Navbar */
+[data-theme="dark"] .admin-navbar,
+[data-theme="dark"] .admin-mobile-bar {
+  background: linear-gradient(135deg, #0A0806 0%, #14110F 100%) !important;
+  border-bottom-color: var(--rh-border) !important;
+}
+
+[data-theme="dark"] .admin-navbar .nav-link {
+  color: var(--rh-text-muted) !important;
+}
+
+[data-theme="dark"] .admin-navbar .nav-link:hover {
+  color: var(--rh-gold) !important;
+  background: rgba(232, 197, 71, 0.1) !important;
+}
+
+[data-theme="dark"] .admin-navbar .nav-link.active {
+  color: var(--rh-charcoal) !important;
+  background: linear-gradient(135deg, var(--rh-gold) 0%, var(--rh-gold-deep) 100%) !important;
+}
+
+[data-theme="dark"] .admin-navbar .user-chip {
+  background: #1E1813 !important;
+  border-color: var(--rh-border-strong) !important;
+}
+
+/* ─── BADGES & PILLS ─── */
+[data-theme="dark"] .badge-pending { background: rgba(217, 119, 6, 0.25) !important; color: #FCD34D !important; }
+[data-theme="dark"] .badge-processing { background: rgba(30, 64, 175, 0.35) !important; color: #93C5FD !important; }
+[data-theme="dark"] .badge-shipped { background: rgba(55, 48, 163, 0.35) !important; color: #A5B4FC !important; }
+[data-theme="dark"] .badge-delivered { background: rgba(20, 168, 120, 0.25) !important; color: #6EE7B7 !important; }
+[data-theme="dark"] .badge-cancelled { background: rgba(185, 28, 28, 0.3) !important; color: #FCA5A5 !important; }
+[data-theme="dark"] .badge-paid { background: rgba(20, 168, 120, 0.25) !important; color: #6EE7B7 !important; }
+[data-theme="dark"] .badge-failed { background: rgba(185, 28, 28, 0.3) !important; color: #FCA5A5 !important; }
+[data-theme="dark"] .badge-blue { background: rgba(59, 130, 246, 0.25) !important; color: #93C5FD !important; }
+[data-theme="dark"] .badge-green { background: rgba(20, 168, 120, 0.25) !important; color: #6EE7B7 !important; }
+[data-theme="dark"] .badge-red { background: rgba(185, 28, 28, 0.3) !important; color: #FCA5A5 !important; }
+[data-theme="dark"] .pill.amber { background: rgba(217, 119, 6, 0.25) !important; color: #FCD34D !important; }
+
+/* ─── FILTER CHIPS ─── */
+[data-theme="dark"] .filter-chip,
+[data-theme="dark"] .ao-tab,
+[data-theme="dark"] .acp-tab,
+[data-theme="dark"] .mode-tab {
+  background: var(--rh-surface) !important;
+  border-color: var(--rh-border-strong) !important;
+  color: var(--rh-text-muted) !important;
+}
+
+[data-theme="dark"] .filter-chip:hover,
+[data-theme="dark"] .ao-tab:hover,
+[data-theme="dark"] .acp-tab:hover,
+[data-theme="dark"] .mode-tab:hover {
+  border-color: var(--rh-saffron) !important;
+  color: var(--rh-saffron) !important;
+}
+
+[data-theme="dark"] .filter-chip.active,
+[data-theme="dark"] .ao-tab.is-active,
+[data-theme="dark"] .acp-tab.active,
+[data-theme="dark"] .mode-tab.active {
+  background: var(--rh-saffron-soft) !important;
+  border-color: var(--rh-saffron) !important;
+  color: var(--rh-saffron) !important;
+}
+
+[data-theme="dark"] .tab-count,
+[data-theme="dark"] .filter-count {
+  background: var(--rh-linen) !important;
+  color: var(--rh-text-soft) !important;
+}
+
+[data-theme="dark"] .ao-tab.is-active .tab-count,
+[data-theme="dark"] .acp-tab.active .tab-count,
+[data-theme="dark"] .filter-chip.active .filter-count {
+  background: var(--rh-surface) !important;
+}
+
+/* ─── STOCK BADGES ─── */
+[data-theme="dark"] .stock-badge.in {
+  background: rgba(20, 168, 120, 0.25) !important;
+  color: #6EE7B7 !important;
+}
+[data-theme="dark"] .stock-badge.low {
+  background: rgba(217, 119, 6, 0.25) !important;
+  color: #FCD34D !important;
+}
+[data-theme="dark"] .stock-badge.out {
+  background: rgba(185, 28, 28, 0.3) !important;
+  color: #FCA5A5 !important;
+}
+
+/* ─── STATUS TOGGLES ─── */
+[data-theme="dark"] .status-toggle.off .toggle-track {
+  background: var(--rh-border-strong) !important;
+}
+
+[data-theme="dark"] .status-select {
+  background: var(--rh-linen) !important;
+  color: var(--rh-text) !important;
+  border-color: var(--rh-border-strong) !important;
+}
+
+[data-theme="dark"] .status-select.status-pending {
+  background: rgba(217, 119, 6, 0.2) !important;
+  color: #FCD34D !important;
+}
+[data-theme="dark"] .status-select.status-shipped {
+  background: rgba(59, 130, 246, 0.2) !important;
+  color: #93C5FD !important;
+}
+[data-theme="dark"] .status-select.status-delivered {
+  background: rgba(20, 168, 120, 0.2) !important;
+  color: #6EE7B7 !important;
+}
+[data-theme="dark"] .status-select.status-cancelled {
+  background: rgba(185, 28, 28, 0.25) !important;
+  color: #FCA5A5 !important;
+}
+
+/* ─── PRODUCT CARDS ─── */
+[data-theme="dark"] .product-image,
+[data-theme="dark"] .cart-row-thumb,
+[data-theme="dark"] .summary-thumb,
+[data-theme="dark"] .item-thumb,
+[data-theme="dark"] .to-item-thumb,
+[data-theme="dark"] .record-thumb,
+[data-theme="dark"] .thumb,
+[data-theme="dark"] .top-img {
+  background: var(--rh-linen) !important;
+}
+
+[data-theme="dark"] .product-fallback,
+[data-theme="dark"] .pd-fallback {
+  color: var(--rh-text-faint) !important;
+}
+
+[data-theme="dark"] .product-category {
+  color: var(--rh-saffron) !important;
+  background: var(--rh-saffron-soft) !important;
+  border-color: rgba(249, 123, 61, 0.3) !important;
+}
+
+[data-theme="dark"] .product-price,
+[data-theme="dark"] .pd-price {
+  color: var(--rh-gold) !important;
+}
+
+[data-theme="dark"] .tag,
+[data-theme="dark"] .ingredient-chip,

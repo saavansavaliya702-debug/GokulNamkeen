@@ -1,0 +1,430 @@
+/* ─────────────────────────────────────────────
+   GOKUL NAMKEEN — ROYAL HERITAGE ADMIN NAVBAR
+   Executive SaaS / Control Center Aesthetic
+   ───────────────────────────────────────────── */
+
+:root {
+  --an-bg: #14100C;
+  --an-surface: #1E1813;
+  --an-elevated: #2A221A;
+  --an-primary: #C9A227;
+  --an-primary-deep: #9C7B1A;
+  --an-accent: #E85D04;
+  --an-text: #F5ECD7;
+  --an-text-soft: #D4C4A8;
+  --an-muted: #9C8F82;
+  --an-border: rgba(201, 162, 39, 0.15);
+  --an-border-strong: rgba(201, 162, 39, 0.3);
+}
+
+/* ─── Mobile Bar ─── */
+.admin-mobile-bar {
+  display: none;
+  background: linear-gradient(135deg, var(--an-bg) 0%, var(--an-surface) 100%);
+  padding: 14px 18px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1.5px solid var(--an-border-strong);
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.admin-mobile-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--an-text);
+  font-family: var(--rh-font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.admin-mobile-brand .logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1.5px solid var(--an-primary);
+  padding: 2px;
+  box-shadow: 0 0 16px rgba(201, 162, 39, 0.3);
+}
+
+.admin-mobile-bar .menu-toggle {
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid var(--an-border-strong);
+  background: var(--an-surface);
+  color: var(--an-primary);
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s var(--rh-ease);
+}
+
+.admin-mobile-bar .menu-toggle:hover,
+.admin-mobile-bar .menu-toggle.open {
+  background: linear-gradient(135deg, var(--an-primary) 0%, var(--an-primary-deep) 100%);
+  color: var(--an-bg);
+  border-color: var(--an-primary-deep);
+  box-shadow: 0 0 24px rgba(201, 162, 39, 0.5);
+  transform: scale(1.05);
+}
+
+/* ─── Main Admin Navbar ─── */
+.admin-navbar {
+  background: linear-gradient(135deg, var(--an-bg) 0%, var(--an-surface) 100%);
+  border-bottom: 1.5px solid var(--an-border-strong);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(201, 162, 39, 0.08) inset;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--an-primary), var(--an-accent), var(--an-primary), transparent);
+  background-size: 200% 100%;
+  animation: gradientShift 6s ease infinite;
+  opacity: 0.8;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.admin-navbar .nav-wrapper {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* ─── Brand ─── */
+.admin-navbar .nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.admin-navbar .logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  border: 1.5px solid var(--an-primary);
+  padding: 2px;
+  box-shadow: 
+    0 0 20px rgba(201, 162, 39, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  transition: all 0.3s var(--rh-ease);
+}
+
+.admin-navbar .nav-brand:hover .logo {
+  transform: scale(1.08) rotate(-4deg);
+  box-shadow: 
+    0 0 30px rgba(201, 162, 39, 0.5),
+    0 0 0 1px rgba(201, 162, 39, 0.3) inset;
+}
+
+.admin-navbar .brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.admin-navbar .brand-name {
+  font-family: var(--rh-font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--an-text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.admin-navbar .brand-role {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--an-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+/* ─── Nav Menu ─── */
+.admin-navbar .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+}
+
+.admin-navbar .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: var(--rh-radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--an-text-soft);
+  text-decoration: none;
+  transition: all 0.3s var(--rh-ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-navbar .nav-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201, 162, 39, 0.15) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+.admin-navbar .nav-icon {
+  font-size: 0.95rem;
+  transition: transform 0.3s var(--rh-ease);
+}
+
+.admin-navbar .nav-link:hover {
+  color: var(--an-text);
+  background: rgba(201, 162, 39, 0.1);
+  transform: translateY(-2px);
+}
+
+.admin-navbar .nav-link:hover::before { opacity: 1; }
+
+.admin-navbar .nav-link:hover .nav-icon {
+  transform: translateY(-2px) scale(1.12);
+}
+
+.admin-navbar .nav-link.active {
+  color: var(--an-bg);
+  background: linear-gradient(135deg, var(--an-primary) 0%, var(--an-primary-deep) 100%);
+  box-shadow: 
+    0 6px 20px rgba(201, 162, 39, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+  transform: translateY(-1px);
+  font-weight: 700;
+}
+
+.admin-navbar .nav-link.active .nav-icon {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* ─── User Area ─── */
+.admin-navbar .nav-user-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-navbar .user-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 14px 5px 5px;
+  background: var(--an-surface);
+  border: 1.5px solid var(--an-border-strong);
+  border-radius: var(--rh-radius-full);
+  transition: all 0.3s var(--rh-ease);
+}
+
+.admin-navbar .user-chip:hover {
+  border-color: var(--an-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(201, 162, 39, 0.2);
+}
+
+.admin-navbar .user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--an-primary) 0%, var(--an-primary-deep) 100%);
+  color: var(--an-bg);
+  font-weight: 800;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 3px 10px rgba(201, 162, 39, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  transition: transform 0.3s var(--rh-ease);
+}
+
+.admin-navbar .user-chip:hover .user-avatar {
+  transform: scale(1.1) rotate(6deg);
+}
+
+.admin-navbar .user-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.admin-navbar .user-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--an-text);
+  line-height: 1.1;
+  max-width: 110px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-navbar .user-role {
+  font-size: 0.66rem;
+  color: var(--an-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ─── Logout Button ─── */
+.admin-navbar .logout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: rgba(220, 38, 38, 0.1);
+  border: 1.5px solid rgba(220, 38, 38, 0.4);
+  color: #FCA5A5;
+  border-radius: var(--rh-radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s var(--rh-ease);
+}
+
+.admin-navbar .logout-btn:hover {
+  background: rgba(220, 38, 38, 0.25);
+  border-color: rgba(220, 38, 38, 0.7);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
+}
+
+.admin-navbar .logout-icon {
+  font-size: 0.95rem;
+  transition: transform 0.3s;
+}
+
+.admin-navbar .logout-btn:hover .logout-icon {
+  transform: translateX(2px);
+}
+
+/* ─── Backdrop ─── */
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ─── Mobile Responsive ─── */
+@media (max-width: 992px) {
+  .admin-mobile-bar { display: flex; }
+
+  .admin-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.4s var(--rh-ease);
+    overflow-y: auto;
+    padding: 32px 24px;
+    border-bottom: none;
+  }
+
+  .admin-navbar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .admin-navbar .nav-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 0;
+    gap: 32px;
+    width: 100%;
+  }
+
+  .admin-navbar .nav-menu {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .admin-navbar .nav-link {
+    padding: 16px 20px;
+    border-radius: var(--rh-radius-md);
+    font-size: 1rem;
+    border: 1.5px solid var(--an-border);
+    background: var(--an-surface);
+  }
+
+  .admin-navbar .nav-link.active {
+    background: linear-gradient(135deg, var(--an-primary) 0%, var(--an-primary-deep) 100%);
+    border-color: var(--an-primary-deep);
+    color: var(--an-bg);
+  }
+
+  .admin-navbar .nav-user-area {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .admin-navbar .user-chip {
+    justify-content: flex-start;
+    padding: 12px 16px;
+  }
+
+  .admin-navbar .logout-btn {
+    justify-content: center;
+    padding: 14px;
+    font-size: 0.92rem;
+  }
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .admin-navbar::before {
+    animation: none !important;
+  }
+}

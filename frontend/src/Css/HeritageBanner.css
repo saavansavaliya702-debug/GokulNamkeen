@@ -1,0 +1,371 @@
+/* ─────────────────────────────────────────────
+   Heritage Story Banner — Royal Carousel
+───────────────────────────────────────────── */
+
+.heritage-section {
+  position: relative;
+  padding: 80px 24px;
+  background: linear-gradient(135deg, var(--rh-ivory) 0%, var(--rh-linen) 50%, var(--rh-gold-soft) 100%);
+  overflow: hidden;
+  border-top: 1px solid var(--rh-border);
+  border-bottom: 1px solid var(--rh-border);
+}
+
+[data-theme="dark"] .heritage-section {
+  background: linear-gradient(135deg, #14110F 0%, #1A1614 50%, #1F1A12 100%);
+}
+
+/* Decorative mandalas */
+.heritage-mandala {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, transparent 30%, var(--rh-gold) 30%, var(--rh-gold) 31%, transparent 31%),
+    radial-gradient(circle, transparent 45%, var(--rh-saffron) 45%, var(--rh-saffron) 46%, transparent 46%),
+    radial-gradient(circle, transparent 60%, var(--rh-gold) 60%, var(--rh-gold) 61%, transparent 61%);
+  opacity: 0.08;
+  pointer-events: none;
+  animation: mandala-spin 60s linear infinite;
+}
+
+.heritage-mandala.top-left {
+  top: -120px;
+  left: -120px;
+}
+
+.heritage-mandala.bottom-right {
+  bottom: -120px;
+  right: -120px;
+  animation-direction: reverse;
+}
+
+@keyframes mandala-spin {
+  to { transform: rotate(360deg); }
+}
+
+.heritage-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .heritage-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ─── Content ─── */
+.heritage-content {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  animation: rh-fade-up 0.7s var(--rh-ease) both;
+}
+
+.heritage-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.heritage-year-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 18px;
+  background: linear-gradient(135deg, var(--rh-gold) 0%, var(--rh-gold-deep) 100%);
+  color: var(--rh-charcoal);
+  border-radius: var(--rh-radius-full);
+  font-family: var(--rh-font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  box-shadow: var(--rh-shadow-sm), var(--rh-shadow-gold);
+}
+
+.heritage-subtitle {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--rh-maroon);
+}
+
+[data-theme="dark"] .heritage-subtitle {
+  color: var(--rh-gold-light);
+}
+
+.heritage-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--rh-text);
+  letter-spacing: -0.03em;
+}
+
+.heritage-desc {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--rh-text-soft);
+  max-width: 580px;
+}
+
+/* Stat row */
+.heritage-stat-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  border-top: 1px dashed var(--rh-border-strong);
+  border-bottom: 1px dashed var(--rh-border-strong);
+  flex-wrap: wrap;
+}
+
+.heritage-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.heritage-stat-value {
+  font-family: var(--rh-font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--rh-saffron) 0%, var(--rh-gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heritage-stat-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--rh-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.heritage-divider-v {
+  width: 1px;
+  height: 44px;
+  background: var(--rh-border-strong);
+}
+
+.heritage-trust {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.heritage-trust-text {
+  font-size: 0.8rem;
+  color: var(--rh-text-muted);
+  font-weight: 600;
+}
+
+.heritage-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+/* ─── Visual ─── */
+.heritage-visual {
+  position: relative;
+  animation: rh-fade-up 0.7s var(--rh-ease) 0.15s both;
+}
+
+.heritage-image-frame {
+  position: relative;
+  border-radius: var(--rh-radius-2xl);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  box-shadow:
+    var(--rh-shadow-xl),
+    0 0 0 1px var(--rh-border-gold),
+    0 0 0 8px var(--rh-surface),
+    0 0 0 9px var(--rh-border-gold);
+  transition: transform var(--rh-transition-slow);
+}
+
+.heritage-image-frame:hover {
+  transform: scale(1.02) rotate(-0.5deg);
+}
+
+.heritage-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--rh-ease);
+}
+
+.heritage-image-frame:hover img {
+  transform: scale(1.08);
+}
+
+.heritage-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 40%,
+    rgba(26, 22, 20, 0.4) 80%,
+    rgba(26, 22, 20, 0.7) 100%
+  );
+  pointer-events: none;
+}
+
+/* Gold seal */
+.heritage-seal {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--rh-gold-light) 0%, var(--rh-gold) 60%, var(--rh-gold-deep) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    var(--rh-shadow-lg),
+    0 0 0 3px var(--rh-surface),
+    0 0 0 4px var(--rh-gold-deep);
+  animation: rh-pulse 3s ease-in-out infinite;
+}
+
+.seal-ring {
+  position: absolute;
+  inset: 8px;
+  border: 1.5px dashed rgba(26, 22, 20, 0.3);
+  border-radius: 50%;
+  animation: mandala-spin 20s linear infinite;
+}
+
+.seal-text {
+  font-family: var(--rh-font-display);
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--rh-charcoal);
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 1.1;
+  z-index: 1;
+}
+
+/* ─── Timeline dots ─── */
+.heritage-timeline {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+  padding: 0 8px;
+}
+
+.heritage-dot {
+  flex: 1;
+  max-width: 120px;
+  background: transparent;
+  border: none;
+  padding: 8px 4px;
+  border-radius: var(--rh-radius-sm);
+  cursor: pointer;
+  position: relative;
+  transition: all var(--rh-transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.heritage-dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--rh-border-strong);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.heritage-dot .dot-year {
+  position: relative;
+  z-index: 1;
+  padding: 4px 12px;
+  background: var(--rh-surface);
+  border: 1.5px solid var(--rh-border-strong);
+  border-radius: var(--rh-radius-full);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--rh-text-muted);
+  letter-spacing: 0.04em;
+  transition: all var(--rh-transition);
+}
+
+.heritage-dot:hover .dot-year {
+  border-color: var(--rh-gold);
+  color: var(--rh-gold-deep);
+}
+
+.heritage-dot.active .dot-year {
+  background: linear-gradient(135deg, var(--rh-gold) 0%, var(--rh-gold-deep) 100%);
+  border-color: var(--rh-gold-deep);
+  color: var(--rh-charcoal);
+  box-shadow: var(--rh-shadow-sm), var(--rh-shadow-gold);
+  transform: scale(1.1);
+}
+
+/* ─── Accent variations ─── */
+.heritage-section.accent-maroon .heritage-stat-value {
+  background: linear-gradient(135deg, var(--rh-maroon) 0%, var(--rh-saffron) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.heritage-section.accent-emerald .heritage-stat-value {
+  background: linear-gradient(135deg, var(--rh-emerald) 0%, var(--rh-gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@media (max-width: 600px) {
+  .heritage-section {
+    padding: 56px 16px;
+  }
+
+  .heritage-image-frame {
+    aspect-ratio: 1 / 1;
+    box-shadow:
+      var(--rh-shadow-lg),
+      0 0 0 1px var(--rh-border-gold),
+      0 0 0 5px var(--rh-surface);
+  }
+
+  .heritage-seal {
+    width: 72px;
+    height: 72px;
+    bottom: 16px;
+    left: 16px;
+  }
+
+  .heritage-stat-row {
+    gap: 16px;
+  }
+
+  .heritage-divider-v {
+    display: none;
+  }
+}

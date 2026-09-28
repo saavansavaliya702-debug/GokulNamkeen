@@ -1,0 +1,194 @@
+/* ─── Skeleton Loading Styles ─── */
+.skeleton-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-subtle) 25%,
+    var(--border-light) 50%,
+    var(--bg-subtle) 75%
+  );
+  background-size: 200% 100%;
+  border-radius: 4px;
+  animation: shimmer 1.5s infinite;
+}
+
+[data-theme="dark"] .skeleton {
+  background: linear-gradient(
+    90deg,
+    #292524 25%,
+    #44403c 50%,
+    #292524 75%
+  );
+}
+
+.skeleton-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-wave {
+  animation: wave 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ─── Skeleton Variants ─── */
+.skeleton-text {
+  height: 16px;
+  border-radius: 4px;
+}
+
+.skeleton-rectangular {
+  border-radius: 8px;
+}
+
+.skeleton-circular {
+  border-radius: 50%;
+}
+
+/* ─── Product Card Skeleton ─── */
+.product-card-skeleton {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.skeleton-image {
+  border-radius: var(--radius-md);
+  aspect-ratio: 4/3;
+}
+
+.skeleton-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.skeleton-category {
+  height: 14px;
+  width: 40%;
+}
+
+.skeleton-title {
+  height: 20px;
+  width: 80%;
+}
+
+.skeleton-desc {
+  height: 14px;
+  width: 60%;
+}
+
+.skeleton-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.skeleton-price {
+  height: 24px;
+  width: 30%;
+}
+
+.skeleton-weight {
+  height: 16px;
+  width: 20%;
+}
+
+.skeleton-button {
+  height: 40px;
+  border-radius: var(--radius-full);
+  margin-top: 8px;
+}
+
+/* ─── Table Row Skeleton ─── */
+.table-row-skeleton {
+  display: flex;
+  gap: 16px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.skeleton-cell {
+  flex: 1;
+}
+
+/* ─── Card Skeleton ─── */
+.card-skeleton {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.skeleton-card {
+  border-radius: var(--radius-md);
+}
+
+/* ─── Avatar Skeleton ─── */
+.skeleton-avatar {
+  flex-shrink: 0;
+}
+
+/* ─── Loading States ─── */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.loading-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.loading-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ─── Accessibility ─── */
+.skeleton[aria-hidden="true"] {
+  user-select: none;
+  pointer-events: none;
+}
