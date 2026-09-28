@@ -5,7 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 import AdminNavbar from "../Navbar/AdminNavbar";
 import "../Css/AdminCustomerPage.css";
 
-const API = "http://localhost:7070/api/admin";
+const API = "https://gokulnamkeen-backend.onrender.com/api/admin";
 
 const getErrMsg = (err) =>
   err?.response?.data?.error || err?.message || "Unknown error";
