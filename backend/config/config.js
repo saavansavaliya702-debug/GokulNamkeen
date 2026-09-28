@@ -6,57 +6,44 @@ module.exports = {
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
+    port: process.env.DB_PORT || 5432,
     dialect: "postgres",
     pool: {
-      max: 20, // Allow more simultaneous connections
-      min: 2, // Maintain some idle connections ready to use
-      acquire: 600000, // Reasonable time (60 sec) * 10  to wait for a connection before throwing error
+      max: 20,
+      min: 2,
+      acquire: 600000,
       idle: 10000,
     },
-    timezone: "+00:00", // UTC
-    logging: true,
-    // dialectOptions: {
-    //   ssl: {
-    //     require: true,
-    //     rejectUnauthorized: false, // You can use this if you don't have a certificate to verify the server.
-    //   },
-    // },
+    timezone: "+00:00",
+    logging: false,
   },
   test: {
     username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
+    port: process.env.DB_PORT || 5432,
     dialect: "postgres",
     pool: {
-      max: 20, // Allow more simultaneous connections
-      min: 0, // Maintain some idle connections ready to use
-      acquire: 600000, // Reasonable time (60 sec) * 10  to wait for a connection before throwing error
+      max: 20,
+      min: 0,
+      acquire: 600000,
       idle: 10000,
     },
-    timezone: "+00:00", // UTC
-    logging: true,
-    // dialectOptions: {
-    //   ssl: {
-    //     require: true,
-    //     rejectUnauthorized: false, // You can use this if you don't have a certificate to verify the server.
-    //   },
-    // },
+    timezone: "+00:00",
+    logging: false,
   },
   production: {
-    username: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    host: process.env.DB_HOST,
+    use_env_variable: "DATABASE_URL",
     dialect: "postgres",
     pool: {
-      max: 20, // Allow more simultaneous connections
-      min: 0, // Maintain some idle connections ready to use
-      acquire: 600000, // Reasonable time (60 sec) * 10  to wait for a connection before throwing error
-      idle: 10000, // Keep unused connections for (30 sec) * 10 before closing
+      max: 20,
+      min: 0,
+      acquire: 600000,
+      idle: 10000,
     },
-    timezone: "+00:00", // UTC
-    logging: true,
+    timezone: "+00:00",
+    logging: false,
     dialectOptions: {
       ssl: {
         require: true,
