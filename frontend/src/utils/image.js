@@ -1,4 +1,4 @@
-const BACKEND = "http://localhost:7070";
+const BACKEND = "https://gokulnamkeen-backend.onrender.com";
 
 export const getImageUrl = (path) => {
   if (!path) return "";
